@@ -1,42 +1,33 @@
-/* 기본 리셋 */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+/* 1) 기본 리셋 */
+* { margin: 0; padding: 0; box-sizing: border-box; }
 body {
   font-family: 'Cormorant Garamond', serif;
   background: url('background.png') center/cover no-repeat;
   height: 100vh;
 }
 
-/* 중앙 패널 */
-.panel {
+/* 2) 메인 메뉴 전용 패널 */
+.menu-panel {
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 50%; left: 50%;
   transform: translate(-50%, -50%);
-  width: 90%;
-  max-width: 360px;
+  width: 90%; max-width: 360px;
   padding: 2rem;
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(255,255,255,0.15);
   backdrop-filter: blur(10px);
   border-radius: 1rem;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.25);
   text-align: center;
 }
 
-/* 타이틀 */
+/* 타이틀 & 버튼 스타일 */
 .title {
-  font-family: 'Cormorant Garamond', serif;
   font-size: 2.5rem;
   font-weight: 600;
-  color: #F5ECD9; /* 고급스러운 연한 크림색 */
+  color: #F5ECD9;
   margin-bottom: 1.5rem;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
-
-/* 버튼 공통 */
 .btn {
   display: block;
   width: 100%;
@@ -44,7 +35,6 @@ body {
   margin: 0.5rem 0;
   border: none;
   border-radius: 0.75rem;
-  font-family: 'Cormorant Garamond', serif;
   font-size: 1.1rem;
   font-weight: 600;
   color: #F5ECD9;
@@ -53,16 +43,63 @@ body {
 }
 .btn:hover {
   transform: scale(1.05);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+.btn-start    { background: linear-gradient(90deg, #D4A373, #B35A1E); }
+.btn-load     { background: linear-gradient(90deg, #8DA9A3, #5D8F88); }
+.btn-settings { background: linear-gradient(90deg, #5D8F88, #3C5B5A); }
+
+
+/* 3) 시대 선택 전용 패널 */
+.era-panel {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%; max-width: 400px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
 }
 
-/* 버튼별 색상: 빈티지 톤 */
-.btn-start {
-  background: linear-gradient(90deg, #D4A373, #B35A1E);
+/* 시대 박스 */
+.era-box {
+  position: relative;
+  overflow: hidden;
+  height: 100px;
+  border-radius: 0.75rem;
+  background: rgba(255,255,255,0.2);
+  cursor: pointer;
+  backdrop-filter: blur(5px);
 }
-.btn-load {
-  background: linear-gradient(90deg, #8DA9A3, #5D8F88);
+.era-text, .era-img {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.5s ease;
 }
-.btn-settings {
-  background: linear-gradient(90deg, #5D8F88, #3C5B5A);
+.era-text {
+  color: #F5ECD9;
+  font-size: 1rem;
+  opacity: 1;
+}
+.era-img {
+  object-fit: cover;
+  opacity: 0;
+}
+.era-box:hover .era-text { opacity: 0; }
+.era-box:hover .era-img  { opacity: 1; }
+
+/* 뒤로 가기 버튼 */
+.back-btn {
+  grid-column: span 2;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 0.5rem;
+  background: rgba(0,0,0,0.5);
+  color: #F5ECD9;
+  font-size: 1rem;
+  cursor: pointer;
 }
