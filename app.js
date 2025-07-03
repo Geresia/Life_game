@@ -1,6 +1,5 @@
 const { useState, useEffect } = React;
 
-// PNG 이미지 경로 포함
 // 시대 목록 (PNG 파일 경로 포함)
 const eras = [
   { key: 'ancient',      name: '고대 시대',      img: 'images/ancient.png' },
@@ -9,12 +8,9 @@ const eras = [
   { key: 'modern',       name: '근대',           img: 'images/pre-modern.png'   },  // 이전 '전근대'
   { key: '20th-early',   name: '20세기 초',      img: 'images/20th-early.png'   },
   { key: 'ww2',          name: '2차 세계대전',   img: 'images/ww2.png'          },
-  { key: 'industrial',   name: '산업화 시대',    img: 'images/industrial.png'   },
+  { key: 'coldwar',      name: '냉전 시대',      img: 'images/coldwar.png'      },
   { key: 'contemporary', name: '현대',           img: 'images/modern.png'       }
 ];
-
-// 이하 기존 코드 유지...
-
 
 function MainMenu({ onStart, onLoad, onSettings }) {
   return (
@@ -55,8 +51,29 @@ function EraSelection({ onSelect, onBack }) {
   );
 }
 
+// 게임 화면 컴포넌트: 고대 시대 선택 시 렌더링됩니다.
+function Game({ era }) {
+  return (
+    <div className="game-panel">
+      <h2>{era.name} 게임 시작!</h2>
+      {/* TODO: 실제 게임 로직을 이곳에 구현합니다. */}
+    </div>
+  );
+}
+
 function App() {
   const [view, setView] = useState('menu');
+  const [selectedEra, setSelectedEra] = useState(null);
+
+  const handleSelect = (era) => {
+    if (era.key === 'ancient') {
+      setSelectedEra(era);
+      setView('game');
+    } else {
+      alert(`선택된 시대: ${era.name}`);
+    }
+  };
+
   return (
     <>
       {view === 'menu' && (
@@ -67,10 +84,10 @@ function App() {
         />
       )}
       {view === 'era' && (
-        <EraSelection
-          onSelect={era => alert(`선택된 시대: ${era.name}`)}
-          onBack={() => setView('menu')}
-        />
+        <EraSelection onSelect={handleSelect} onBack={() => setView('menu')} />
+      )}
+      {view === 'game' && selectedEra && (
+        <Game era={selectedEra} />
       )}
     </>
   );

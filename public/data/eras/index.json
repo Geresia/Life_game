@@ -1,0 +1,93 @@
+{
+  "eras": [
+    {
+      "key": "ancient",
+      "name": "고대 시대",
+      "startYear": -3000,
+      "endYear": 476,
+      "regions": ["Rome", "Egypt", "Mesopotamia"],
+      "eventIds": [
+        "ancient_-3000_first_civilization",
+        "ancient_-2950_irrigation_development",
+        "ancient_-753_founding"
+      ]
+    },
+    {
+      "key": "medieval",
+      "name": "중세 시대",
+      "startYear": 476,
+      "endYear": 1453,
+      "regions": ["Byzantine", "Western Europe", "Islamic Caliphates", "Tang Dynasty"],
+      "eventIds": [
+        "medieval_500_fall_rome",
+        "medieval_800_charlemagne",
+        "medieval_1096_crusades_start"
+      ]
+    },
+    {
+      "key": "renaissance",
+      "name": "르네상스",
+      "startYear": 1453,
+      "endYear": 1600,
+      "regions": ["Italy", "Northern Europe", "Ottoman Empire"],
+      "eventIds": [
+        "renaissance_1492_columbus",
+        "renaissance_1517_reformation"
+      ]
+    },
+    {
+      "key": "modern",
+      "name": "근대",
+      "startYear": 1600,
+      "endYear": 1789,
+      "regions": ["Europe", "Colonial Americas", "Ming China"],
+      "eventIds": [
+        "modern_1687_newton",
+        "modern_1776_us_independence"
+      ]
+    },
+    {
+      "key": "20th-early",
+      "name": "20세기 초",
+      "startYear": 1900,
+      "endYear": 1939,
+      "regions": ["Europe", "USA", "Japan"],
+      "eventIds": [
+        "20th-early_1914_ww1_start",
+        "20th-early_1929_great_depression"
+      ]
+    },
+    {
+      "key": "ww2", 
+      "startYear": 1939,
+      "endYear": 1945,
+      "regions": ["Europe", "Pacific", "Asia"],
+      "eventIds": [
+        "ww2_1939_germany_invades_poland",
+        "ww2_1941_pearl_harbor"
+      ]
+    },
+    {
+      "key": "coldwar",
+      "name": "냉전 시대",
+      "startYear": 1947,
+      "endYear": 1991,
+      "regions": ["USA", "USSR", "Berlin", "Korea"],
+      "eventIds": [
+        "coldwar_1949_china_ppl_rep",
+        "coldwar_1962_cuban_missile_crisis"
+      ]
+    },
+    {
+      "key": "contemporary",
+      "name": "현대",
+      "startYear": 1991,
+      "endYear": 2025,
+      "regions": ["Global"],
+      "eventIds": [
+        "contemporary_2001_9_11",
+        "contemporary_2020_covid19"
+      ]
+    }
+  ]
+}
