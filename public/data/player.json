@@ -1,0 +1,17 @@
+{
+  "stats": {
+    "intelligence": 5,
+    "health":      8,
+    "happiness":   6,
+    "appearance":  4
+  },
+  "profile": {
+    "name":             "아누",
+    "gender":           "Male",
+    "socialRank":       "Commoner",
+    "occupation":       "농부",
+    "ageCategory":      "Adult",
+    "nationality":      "Babylonian",
+    "residenceCountry": "Mesopotamia"
+  }
+}
